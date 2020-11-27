@@ -20,4 +20,20 @@ export class FoodService {
   getFoods(): Food[] {
     return this.foods;
   }
+
+  getSortedFoodsByKcalAsc(): Food[] {
+    return [...this.foods].sort((food1, food2) => food1.kcal - food2.kcal);
+  }
+
+  getTotalOfKcals(): number {
+    return this.foods.reduce((accumulator, food) => accumulator + food.kcal, 0);
+  }
+
+  addExclamationPointToName(): Food[] {
+    return this.foods.map((food) => {
+      const changedFood = { ...food };
+      changedFood.name += '!';
+      return changedFood;
+    });
+  }
 }

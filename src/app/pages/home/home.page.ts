@@ -9,10 +9,24 @@ import { FoodService } from 'src/app/services/food.service';
 })
 export class HomePage implements OnInit {
   foods: Food[];
+  totalOfKcals: number;
 
   constructor(private foodService: FoodService) {}
 
   ngOnInit(): void {
+    this.foods = this.foodService.getFoods();
+    this.totalOfKcals = this.foodService.getTotalOfKcals();
+  }
+
+  onSortClick(): void {
+    this.foods = this.foodService.getSortedFoodsByKcalAsc();
+  }
+
+  onAddExclamationClick(): void {
+    this.foods = this.foodService.addExclamationPointToName();
+  }
+
+  onResetClick(): void {
     this.foods = this.foodService.getFoods();
   }
 }

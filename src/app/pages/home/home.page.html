@@ -10,4 +10,21 @@
       <ion-label>{{food.name}} - {{food.kcal}}kcal</ion-label>
     </ion-item>
   </ion-list>
+
+  <p class="ion-padding">Total of kcals: {{totalOfKcals}}</p>
+
+  <div class="buttons">
+    <ion-button (click)="onSortClick()">
+      <ion-icon slot="start" name="filter"></ion-icon>
+      Sort by kcal ASC
+    </ion-button>
+    <ion-button (click)="onAddExclamationClick()">
+      <ion-icon slot="start" name="pencil"></ion-icon>
+      Add exclamation point to food name
+    </ion-button>
+    <ion-button (click)="onResetClick()">
+      <ion-icon slot="start" name="refresh"></ion-icon>
+      Reset
+    </ion-button>
+  </div>
 </ion-content>
