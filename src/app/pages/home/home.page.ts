@@ -29,4 +29,9 @@ export class HomePage implements OnInit {
   onResetClick(): void {
     this.foods = this.foodService.getFoods();
   }
+
+  onSearch(event): void {
+    const searchValue = event.target.value;
+    this.foods = this.foodService.search(searchValue);
+  }
 }

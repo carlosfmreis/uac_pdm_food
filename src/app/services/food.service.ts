@@ -36,4 +36,10 @@ export class FoodService {
       return changedFood;
     });
   }
+
+  search(searchValue: string): Food[] {
+    return [...this.foods].filter((food) =>
+      food.name.toLowerCase().includes(searchValue.toLowerCase())
+    );
+  }
 }

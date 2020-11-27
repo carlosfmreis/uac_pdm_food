@@ -2,6 +2,9 @@
   <ion-toolbar>
     <ion-title> Food </ion-title>
   </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar (ionInput)="onSearch($event)"></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -10,6 +13,8 @@
       <ion-label>{{food.name}} - {{food.kcal}}kcal</ion-label>
     </ion-item>
   </ion-list>
+
+  <p class="ion-padding" *ngIf="foods.length === 0">No foods.</p>
 
   <p class="ion-padding">Total of kcals: {{totalOfKcals}}</p>
 
